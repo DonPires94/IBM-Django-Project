@@ -136,5 +136,5 @@ def show_exam_result(request, course_id, submission_id):
         context["max_grade"] += choice.question.points
         if choice.correct:
             context["points"] += choice.question.points
-    context["grade"] = round((context["points"] / context["max_grade"]), 2)
+    context["grade"] = round((context["points"] / context["max_grade"]) * 100, 2)
     return render(request, "onlinecourse/exam_result_bootstrap.html", context)
